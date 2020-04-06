@@ -27,10 +27,10 @@ class Question extends BaseModel
         return $this->created_at->diffForHumans();
     }
 
-    public function getAnswersStyleAttribute(){
+    public function getAnswersStylesAttribute(){
         if($this->answers_count > 0){
             if($this->best_answer_id){
-                return "has-best-asnwer";
+                return "has-best-answer";
             }
             return "answered";
         }

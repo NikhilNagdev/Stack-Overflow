@@ -1,14 +1,14 @@
-.statistics {
-    strong {
-        font-size: 1.2rem;
+.statistics{
+    strong{
+        font-size:  1.2em;
     }
-
     .answers{
         padding: 10px;
         border-radius: 5px;
-        &.answerd{
-            border: solid 1px $sucess;
-            color: $sucess;
+
+        &.answered{
+            border: solid 1px $success;
+            color: $success;
         }
         &.unanswered{
             background: $danger;
@@ -18,5 +18,6 @@
             background: $success;
             color: $white;
         }
+
     }
 }
