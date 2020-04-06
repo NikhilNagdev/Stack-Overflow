@@ -1,0 +1,22 @@
+.statistics {
+    strong {
+        font-size: 1.2rem;
+    }
+
+    .answers{
+        padding: 10px;
+        border-radius: 5px;
+        &.answerd{
+            border: solid 1px $sucess;
+            color: $sucess;
+        }
+        &.unanswered{
+            background: $danger;
+            color: $white;
+        }
+        &.has-best-answer{
+            background: $success;
+            color: $white;
+        }
+    }
+}
