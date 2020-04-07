@@ -73,7 +73,9 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        return view('questions.edit',compact("question"));
+        if($this->authorize('update', $question)) {
+            return view('questions.edit', compact("question"));
+        }
     }
 
     /**
@@ -85,12 +87,17 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        $question->update([
-            'title'=>$request->title,
-            'body'=>$request->body
-        ]);
-        session()->flash('success', 'Question has been updated successfully');
-        return redirect(route('questions.index'));
+
+        if($this->authorize('update', $question)){
+            $question->update([
+                'title'=>$request->title,
+                'body'=>$request->body
+            ]);
+            session()->flash('success', 'Question has been updated successfully');
+            return redirect(route('questions.index'));
+        }
+        abort(403, 'Access Denied');
+
     }
 
     /**
@@ -101,8 +108,11 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        $question->delete();
-        session()->flash('success', 'Question has been deleted successfully');
-        return redirect(route('questions.index'));
+        if($this->authorize('delete', $question)) {
+            $question->delete();
+            session()->flash('success', 'Question has been deleted successfully');
+            return redirect(route('questions.index'));
+        }
+        abort(403, 'Access Denied');
     }
 }
