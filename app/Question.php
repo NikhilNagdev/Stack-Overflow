@@ -12,6 +12,10 @@ class Question extends BaseModel
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function answers(){
+        return $this->hasMany(Answer::class);
+    }
+
     //mutator
     public function setTitleAttribute($title){
         $this->attributes['title'] = $title;
