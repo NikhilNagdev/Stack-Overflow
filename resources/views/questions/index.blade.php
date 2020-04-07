@@ -5,6 +5,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div class="d-flex justify-content-end mb-3">
+                    <a href="{{ route('questions.create') }}" class="btn btn-outline-primary">Ask a Question !</a>
+                </div>
+
                 <div class="card">
                     <div class="card-header">All Questions</div>
 
@@ -27,6 +31,13 @@
 
                                 </div>
                                 <div class="media-body">
+
+                                    <div class="d-flex justify-content-between">
+
+
+                                        <h4><a href="{{$question->url}}">{{$question->title}}</a></h4>
+                                        <a href="{{route('questions.edit',$question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
+                                    </div>
 
                                     <h4><a href="{{ $question->url }}">{{$question->title}}</a></h4>
                                     <p> Asked By:

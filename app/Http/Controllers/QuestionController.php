@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Questions\CreateQuestionRequest;
 use App\Question;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth'])->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +32,8 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        // app('debugbar').disable();
+        return view('questions.create');
     }
 
     /**
@@ -34,9 +42,14 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateQuestionRequest $request)
     {
-        //
+        auth()->user()->questions()->create([
+            'title'=>$request->title,
+            'body'=>$request->body
+        ]);
+        session()->flash('success', 'Question has been added suscessfully');
+        return redirect(route('questions.index'));
     }
 
     /**
@@ -58,7 +71,7 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        //
+        return view('questions.edit',compact("question"));
     }
 
     /**
@@ -70,7 +83,12 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $question->update([
+            'title'=>$request->title,
+            'body'=>$request->body
+        ]);
+        session()->flash('success', 'Question has been updated successfully');
+        return redirect(route('questions.index'));
     }
 
     /**

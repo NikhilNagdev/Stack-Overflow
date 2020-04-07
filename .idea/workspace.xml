@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8762d333-c776-4273-9c04-f8e846a05159" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="8762d333-c776-4273-9c04-f8e846a05159" name="Default Changelist" comment="Added some CSS styling">
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Questions/CreateQuestionRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/_message.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/questions/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/questions/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/questions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/questions/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +17,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -157,21 +159,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586158818149</updated>
-      <workItem from="1586158821825" duration="5399000" />
+      <workItem from="1586158821825" duration="6256000" />
+      <workItem from="1586235976947" duration="3888000" />
     </task>
+    <task id="LOCAL-00001" summary="Added some CSS styling">
+      <created>1586168411574</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586168411574</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added some CSS styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some CSS styling" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1586168489412">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586168489412" />
+    <state x="1057" y="480" key="NewPhpFileDialog" timestamp="1586241466198">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="1057" y="480" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1586241466198" />
     <state x="555" y="110" key="SettingsEditor" timestamp="1586159931921">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586159931921" />
-    <state x="470" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586158822138">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1586168492955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="470" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586158822138" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586168492955" />
+    <state x="470" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586236123506">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="470" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586236123506" />
+    <state x="885" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586239880399">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="885" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586239880399" />
   </component>
 </project>
