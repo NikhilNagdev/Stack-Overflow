@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Question;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +31,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
-        parent::boot();
+        //This is custom binding of the question with the slug yaa slug se bind hoga yaa id se
+        Route::bind('slug', function($slug){
+            return Question::where('slug', $slug)->firstOrFail();//return question model binded with slug
+        });
+        parent::boot();//This method is used to bind the Model with the id eg if url mein question/1 diya toh id 1 ka model object laega database se banake
     }
 
     /**
