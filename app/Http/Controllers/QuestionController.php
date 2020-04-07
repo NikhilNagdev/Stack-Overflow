@@ -44,11 +44,12 @@ class QuestionController extends Controller
      */
     public function store(CreateQuestionRequest $request)
     {
+
         auth()->user()->questions()->create([
             'title'=>$request->title,
             'body'=>$request->body
         ]);
-        session()->flash('success', 'Question has been added suscessfully');
+        session()->flash('success', 'Question has been added susccessfully');
         return redirect(route('questions.index'));
     }
 
@@ -99,6 +100,8 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $question->delete();
+        session()->flash('success', 'Question has been deleted successfully');
+        return redirect(route('questions.index'));
     }
 }

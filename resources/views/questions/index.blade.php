@@ -32,25 +32,38 @@
                                 </div>
                                 <div class="media-body">
 
-                                    <div class="d-flex justify-content-between">
+                                    <div class="media-body">
+
+                                        <div class="d-flex justify-content-between">
 
 
-                                        <h4><a href="{{$question->url}}">{{$question->title}}</a></h4>
-                                        <a href="{{route('questions.edit',$question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
+                                            <h4><a href="{{$question->url}}">{{$question->title}}</a></h4>
+                                            <div>
+                                                <a href="{{route('questions.edit',$question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
+                                                <form action="{{route('questions.destroy',$question->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"
+                                                            onclick="return confirm('Do you want to delete')"
+                                                            class="btn btn-sm btn-outline-danger">
+
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Asked by: <a href="#">{{$question->owner->name}}</a>
+                                            <span class="text-muted">{{$question->created_date}}</span>
+                                        </p>
+                                        <h4>{!!  Str::limit($question->body,250)!!}</h4>
                                     </div>
-
-                                    <h4><a href="{{ $question->url }}">{{$question->title}}</a></h4>
-                                    <p> Asked By:
-                                        <a href="#">{{ $question->owner->name }}</a>
-                                        <span class="text-muted"> {{ $question->created_date }}</span>
-                                    </p>
-                                    <p>{{ Str::limit($question->body,250) }}</p>
                                 </div>
                             </div>
-                        </div>
+                            <hr>
                     @endforeach
 
-                    <br>
+                    <hr>
                     <div class="card-footer">
                         {{ $questions->links() }}
                     </div>

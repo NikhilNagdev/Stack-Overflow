@@ -10,7 +10,7 @@
                         <h3>Asa a Question</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('questions.store') }}">
+                        <form action="{{ route('questions.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="title">Title</label>
@@ -21,7 +21,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="hidden" id="body" value="{{ old('body') }}">
+                                <input type="hidden" id="body" name="body" value="{{ old('body') }}">
                                 <trix-editor input="body"></trix-editor>
                                 @error('body')
                                     <div class="text-danger">{{ $message }}</div>
@@ -29,7 +29,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-outline-sucess"> Post a Question</button>
+                                <button type="submit" class="btn btn-outline-success"> Post a Question</button>
                             </div>
                         </form>
                     </div>

@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8762d333-c776-4273-9c04-f8e846a05159" name="Default Changelist" comment="Added some CSS styling">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Questions/CreateQuestionRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/_message.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/questions/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/questions/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/_message.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/_message.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/questions/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/questions/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/questions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/questions/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +157,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586158818149</updated>
       <workItem from="1586158821825" duration="6256000" />
-      <workItem from="1586235976947" duration="3888000" />
+      <workItem from="1586235976947" duration="5106000" />
     </task>
     <task id="LOCAL-00001" summary="Added some CSS styling">
       <created>1586168411574</created>
