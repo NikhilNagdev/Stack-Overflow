@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <dov class="row">
+        <div class="row">
             <div class="col-md-12">
                 <dov class="card">
                     <div class="card-header">
@@ -35,7 +35,7 @@
                     </div>
                 </dov>
             </div>
-        </dov>
+        </div>
     </div>
 @endsection
 

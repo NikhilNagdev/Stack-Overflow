@@ -23,7 +23,7 @@
                                 <i class="fa fa-check fa-2x "></i>
                             </a>
                         </div>
-                        <div class="ml-5">
+                        <div class="ml-5 flex-fill">
                             {!! $answer->body !!}
 
                             <div class="d-flex justify-content-between mt-2">
