@@ -79,7 +79,7 @@
                     @include('partials._message')
                 </div>
             </div>
-        </div>
+        </div>a
 
         <main class="py-4">
             @yield('content')

@@ -41,6 +41,12 @@ class User extends Authenticatable
         return $this->hasMany(Question::class);
     }
 
+    public function getAvatarAttribute(){
+        $size = 40;
+        $name = $this->name;
+        return "http://ui-avatar.com/api/?name={$name}";
+    }
+
     public function answers(){
         return $this->hasMany(Answer::class);
     }
