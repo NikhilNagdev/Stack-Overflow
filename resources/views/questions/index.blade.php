@@ -8,12 +8,12 @@
                 <div class="d-flex justify-content-end mb-3">
                     <a href="{{ route('questions.create') }}" class="btn btn-outline-primary">Ask a Question !</a>
                 </div>
-
                 <div class="card">
                     <div class="card-header">All Questions</div>
 
-                    @foreach($questions as $question)
-                        <div class="card-body">
+                    <div class="card-body">
+                        @foreach($questions as $question)
+
                             <div class="media">
                                 <div class="d-flex flex-column mr-4 statistics">
                                     <div class="text-center mb-3">
@@ -28,33 +28,28 @@
                                         <strong class="d-block"> {{ $question->views_count }}</strong>
                                         Views
                                     </div>
-
                                 </div>
                                 <div class="media-body">
-
                                     <div class="media-body">
-
                                         <div class="d-flex justify-content-between">
-
-
                                             <h4><a href="{{$question->url}}">{{$question->title}}</a></h4>
-
-
                                             <div>
                                                 @can('update', $question)
-                                                <a href="{{route('questions.edit',$question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
+                                                    <a href="{{route('questions.edit',$question->id)}}"
+                                                       class="btn btn-sm btn-outline-info">Edit</a>
                                                 @endcan
                                                 @can('delete', $question)
-                                                <form action="{{route('questions.destroy',$question->id)}}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit"
-                                                            onclick="return confirm('Do you want to delete')"
-                                                            class="btn btn-sm btn-outline-danger">
+                                                    <form action="{{route('questions.destroy',$question->id)}}"
+                                                          method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                                onclick="return confirm('Do you want to delete')"
+                                                                class="btn btn-sm btn-outline-danger">
 
-                                                        Delete
-                                                    </button>
-                                                </form>
+                                                            Delete
+                                                        </button>
+                                                    </form>
                                                 @endcan
                                             </div>
                                         </div>
@@ -67,14 +62,12 @@
                                 </div>
                             </div>
                             <hr>
-                    @endforeach
-
-                    <hr>
-                    <div class="card-footer">
-                        {{ $questions->links() }}
+                        @endforeach
+                        <div class="card-footer">
+                            {{ $questions->links() }}
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

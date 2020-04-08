@@ -87,7 +87,6 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-
         if($this->authorize('update', $question)){
             $question->update([
                 'title'=>$request->title,

@@ -44,7 +44,7 @@ class User extends Authenticatable
     public function getAvatarAttribute(){
         $size = 40;
         $name = $this->name;
-        return "http://ui-avatar.com/api/?name={$name}";
+        return "http://ui-avatars.com/api/?name={$name}&rounded=true&size={$size}";
     }
 
     public function answers(){
