@@ -86,7 +86,7 @@ class Question extends BaseModel
         return $this->favourites->count();
     }
 
-    public function getIsFavouritesAttribute(){
+    public function getIsFavouriteAttribute(){
         return $this->favourites()->where(['user_id'=>auth()->id()])->count() >0;
     }
 }
