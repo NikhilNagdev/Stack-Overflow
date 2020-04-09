@@ -10,15 +10,37 @@
                 @foreach($question->answers as $answer)
                     <div class="d-flex">
                         <div>
-                            <a href="" title="Up Vote" class="d-block text-dark text-center">
-                                <i class="fa fa-caret-up fa-3x "></i>
-                            </a>
+
+                            @auth
+                                <form action="{{ route('answers.vote', [$answer->id, 1]) }}" method="POST">
+                                    @csrf
+                                    <button type="submit"
+                                            class="btn {{ auth()->user()->hasAnswerUpVote($answer) ? 'text-dark' : 'text-black-50' }}">
+                                        <i class="fa fa-caret-up fa-3x "></i>
+                                    </button>
+                                </form>
+                            @else
+                                <a href="{{ route('login') }}" class="d-block text-center text-black-50">
+                                    <i class="fa fa-caret-up fa-3x "></i>
+                                </a>
+                            @endauth
+
                             <h4 class="m-0 text-center text-dark">
-                                {{ $question->votes_count }}
+                                {{ $answer->votes_count }}
                             </h4>
-                            <a href="" title="Down Vote" class="d-block text-dark text-center">
-                                <i class="fa fa-caret-down fa-3x "></i>
-                            </a>
+                                @auth
+                                    <form action="{{ route('answers.vote', [$answer->id, -1]) }}" method="POST">
+                                        @csrf
+                                        <button type="submit"
+                                                class="btn {{ auth()->user()->hasAnswerDownVote($answer) ? 'text-dark' : 'text-black-50' }}">
+                                            <i class="fa fa-caret-down fa-3x "></i>
+                                        </button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('login') }}" class="d-block text-center text-black-50">
+                                        <i class="fa fa-caret-down fa-3x "></i>
+                                    </a>
+                                @endauth
                             <div class="mt-2">
                                 @can('markAsBest', $answer)
                                     <form action="{{ route('answers.bestAnswer', $answer->id) }}" method="POST">

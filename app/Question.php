@@ -2,7 +2,7 @@
 
 namespace App;
 
-// use Illuminate\Database\Eloquent\Model;
+ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Question extends BaseModel
@@ -20,8 +20,34 @@ class Question extends BaseModel
         return $this->belongsToMany(User::class)->withTimestamps();
     }
 
+    public function votes(){
+        return $this->morphToMany(User::class, 'vote')->withTimestamps();
+    }
+
+    public function vote(int $vote){
+        $this->votes()->attach(auth()->id(), ['vote'=>$vote]);
+
+        if($vote < 0){
+            $this->decrement('votes_count');
+        }else{
+            $this->increment('votes_count');
+        }
+    }
+
+    public function updateVote(int $vote){
+        $this->votes()->updateExistingPivot(auth()->id(), ['vote'=>$vote]);
+
+        if($vote < 0){
+            $this->decrement('votes_count');
+            $this->decrement('votes_count');
+        }else{
+            $this->increment('votes_count');
+            $this->increment('votes_count');
+        }
+    }
+
     public function markAsBestAnswer(Answer $answer){
-        $this->best_answer_id = $answer_id;
+        $this->best_answer_id = $answer->id;
         $this->save();
     }
 
@@ -57,10 +83,10 @@ class Question extends BaseModel
 
     public function getFavouritesCountAttribute()
     {
-        return $this->favorites->count();
+        return $this->favourites->count();
     }
 
-    public function getFavouritesAttribute(){
+    public function getIsFavouritesAttribute(){
         return $this->favourites()->where(['user_id'=>auth()->id()])->count() >0;
     }
 }
