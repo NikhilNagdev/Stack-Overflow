@@ -40,4 +40,9 @@ class Question extends BaseModel
         }
         return "unanswered";
     }
+
+    public function markBestAnswer(Answer $answer){
+        $this->best_answer_id = $answer->id;
+        $this->save();
+    }
 }

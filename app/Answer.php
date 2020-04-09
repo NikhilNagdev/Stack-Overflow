@@ -18,6 +18,17 @@ class Answer extends BaseModel
         return $this->created_at->diffForHumans();
     }
 
+    public function getBestAnswerStatusAttribute(){
+        if($this->id === $this->question->best_answer_id){
+            return "text-success";
+        }
+        return "text-dark";
+    }
+
+    public function getIsBestAttribute(){
+        return $this->id === $this->question->best_answer_id;
+    }
+
     public static function boot(){
         parent::boot();
         static::created(function ($answer){
