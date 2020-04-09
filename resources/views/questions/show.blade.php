@@ -7,9 +7,13 @@
                     <div class="card-header">
                         {{ $question->title }}
                     </div>
+
+
                     <div class="card-body">
                         {!! $question->body  !!}
                     </div>
+
+
                     <div class="card-footer">
                         <div class="d-flex justify-content-between">
                             <div class="d-flex">
@@ -71,18 +75,18 @@
                                         @endcan
                                     </div>
                                 </div>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted flex-column">
-                                        Asked : {{ $question->created_date }}
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="text-muted flex-column">
+                                    Asked : {{ $question->created_date }}
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <img src="{{ $question->owner->avatar }}"
+                                             alt="{{ $question->owner->name }}">
                                     </div>
-                                    <div class="d-flex mb-2">
-                                        <div>
-                                            <img src="{{ $question->owner->avatar }}"
-                                                 alt="{{ $question->owner->name }}">
-                                        </div>
-                                        <div class="mt-2 ml-2">
-                                            {{ $question->owner->name }}
-                                        </div>
+                                    <div class="mt-2 ml-2">
+                                        {{ $question->owner->name }}
                                     </div>
                                 </div>
                             </div>
@@ -92,13 +96,15 @@
             </div>
         </div>
 
-            @include('answers._index')
-            @include('answers._create')
+
+
+    @include('answers._index')
+    @include('answers._create')
 
     </div>
-        @endsection
-        @section('styles')
-            <link rel="stylesheet"
-                  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css">
+@endsection
+@section('styles')
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css">
 @endsection
