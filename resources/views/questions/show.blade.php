@@ -26,11 +26,23 @@
                                     </a>
                                 </div>
                                 {{--Mark as Fav--}}
-                                <div class="ml-5 mt-2">
-                                    <a href="" title="Mark as Favourite" class="d-block text-dark text-center">
-                                        <i class="fa fa-star fa-2x "></i>
-                                    </a>
-                                    <h4 class="text-dark m-0">45</h4>
+                                <div class="ml-5 mt-2 {{ $question->is_favourite ? 'text-earning' : 'text-dark' }}">
+
+                                    @can('markAsFavourite', $question)
+                                        <form action="{{ route($question->is_favourite ? 'questions.unfavourite' : 'questions.favourite', $question->id) }}" method="POST">
+                                            @csrf
+                                            @if($question->is_favourite)
+                                                @method('DELETE')
+                                            @endif
+                                            <button type="submit" class="btn {{ $question->is_favourite ? 'text-warning' : 'text-dark' }}">
+                                                <i class="fa  {{ $question->is_favourite ? 'fa-star' : 'fa-star-o' }} fa-2x" aria-hidden="true"></i>
+                                            </button>
+                                        </form>
+                                        <h4 class="text-dark m-0">{{ $question->favourites_count }}</h4>
+                                        @else
+                                            <i class="fa fa-star-o text-warning d-block fa-2x" aria-hidden="true"></i>
+                                            <h4 class="text-dark m-0">{{ $question->favourites_count }}</h4>
+                                    @endcan
                                 </div>
                             </div>
                             <div class="d-flex flex-column">

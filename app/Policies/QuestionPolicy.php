@@ -91,4 +91,9 @@ class QuestionPolicy
     {
         //
     }
+
+
+    public function markAsFavourite(User $user, Question $question){
+        return $user->id != $question->user_id;
+    }
 }
